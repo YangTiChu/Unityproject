@@ -7,7 +7,7 @@ using UnityEngine.Device;
 using UnityEngine.UI;
 
 
-//未完成  //指示燈部分還沒加 
+//完成  
 public class GestureJudgment : MonoBehaviour
 {
     public GameObject Rulepage; //規則確認
@@ -40,7 +40,6 @@ public class GestureJudgment : MonoBehaviour
         //資料處理 去掉[]
         data = data.Remove(0, 1);
         data = data.Remove(data.Length - 1, 1);
-        //print(data);
 
         //判定開始
         if (data == "0" && check==false)  {
@@ -54,19 +53,17 @@ public class GestureJudgment : MonoBehaviour
             else if (data == "2") B++;
             else if (data == "3") C++;
             else F++;
-            //延遲還沒加
             count++;
         }
-        print(count);
         if (count == 150)
         {
             if (LVC.LVchoose == 1) score = Evaluate(A);
             if (LVC.LVchoose == 2) score = Evaluate(B);
             if (LVC.LVchoose == 3) score = Evaluate(C);
 
-            if (score == 10) eva = "優";
-            else if (score == 8) eva = "良";
-            else if (score == 5) eva = "可";
+            if (score == 20) eva = "優";
+            else if (score == 16) eva = "良";
+            else if (score == 10) eva = "可";
             else  eva = "差";
 
             TotalScore += score;
@@ -77,8 +74,9 @@ public class GestureJudgment : MonoBehaviour
             count = 0;
             Startimg.color = Color.red;
         }
-        if (TotalScore >= 20)
+        if (TotalScore >= 50)
         {
+            TotalScore = 0;
             Time.timeScale = 0f; //暫停
             Winpage.SetActive(true);
         }
@@ -86,9 +84,9 @@ public class GestureJudgment : MonoBehaviour
 
     public int Evaluate(int x) //給分
     {
-        if (x >= 105) x = 10; //70
-        else if (x >= 75) x = 8; //50
-        else if (x >= 45) x = 5; //30
+        if (x >= 105) x = 20; //70
+        else if (x >= 75) x = 16; //50
+        else if (x >= 45) x = 10; //30
         else x = 0;
         return x;
     }
@@ -96,10 +94,8 @@ public class GestureJudgment : MonoBehaviour
     public void RuleClick() //規則確認按鈕
     {
         Score.text = "分數:";
-        //GameTime.text = "時間 ";
         Eva.text = " ";
         TotalScore = 0;
-        //time = 0;
         Rulepage.SetActive(false);
         Time.timeScale = 1f; //繼續
     }

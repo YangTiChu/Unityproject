@@ -11,7 +11,6 @@ public class HandTracking : MonoBehaviour
     //將UDP=5056接收的數據傳到手部模型點點上
     public UDPReceive udpReceive;
     public GameObject[] handPoints;
-    //int runtime = 1;
 
     void Start()
     {
@@ -26,9 +25,7 @@ public class HandTracking : MonoBehaviour
         }
         data = data.Remove(0, 1);
         data = data.Remove(data.Length - 1, 1);
-        //print(data);
         string[] points = data.Split(',');
-        //print(points[0]);
 
         for (int i = 0; i < 21; i++)
         {

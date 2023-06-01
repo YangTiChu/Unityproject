@@ -8,7 +8,7 @@ using System.Threading;
 using UnityEngine;
 
 
-//未完成
+//完成
 public class UDPtrackingRec : MonoBehaviour
 {
     Thread receiveThread;
@@ -42,7 +42,6 @@ public class UDPtrackingRec : MonoBehaviour
                 byte[] dataByte = client.Receive(ref anyIP);
 
                 result = Encoding.UTF8.GetString(dataByte);
-                //print(result);
 
             }
             catch (Exception e)

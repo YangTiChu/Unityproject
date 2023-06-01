@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 
-//未完成 //規則確認&勝利介面還沒做 //影片編號還沒做
+//完成 
 public class AllButtonCon : MonoBehaviour
 {
     public GameObject CHscreen; //選關
@@ -34,6 +34,7 @@ public class AllButtonCon : MonoBehaviour
     {
         Rulepage.SetActive(true);
         CHscreen.SetActive(false);
+        Winpage.SetActive(false);
         LVchoose = 1;
         vp.clip = clips[0]; //0
     }
@@ -41,6 +42,7 @@ public class AllButtonCon : MonoBehaviour
     {
         Rulepage.SetActive(true);
         CHscreen.SetActive(false);
+        Winpage.SetActive(false);
         LVchoose = 2;
         vp.clip = clips[1]; //2
     }
@@ -48,6 +50,7 @@ public class AllButtonCon : MonoBehaviour
     {
         Rulepage.SetActive(true);
         CHscreen.SetActive(false);
+        Winpage.SetActive(false);
         LVchoose = 3;
         vp.clip = clips[2]; //4
     }

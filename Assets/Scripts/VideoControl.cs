@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Video;
 
 
-//未完成
+//完成
 public class VideoControl : MonoBehaviour
 {
     public VideoPlayer vp;
