@@ -74,7 +74,7 @@ public class GestureJudgment : MonoBehaviour
             count = 0;
             Startimg.color = Color.red;
         }
-        if (TotalScore >= 50)
+        if (TotalScore >= 100)
         {
             TotalScore = 0;
             Time.timeScale = 0f; //¼È°±
