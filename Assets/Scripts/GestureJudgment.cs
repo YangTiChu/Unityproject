@@ -20,7 +20,7 @@ public class GestureJudgment : MonoBehaviour
     public GameObject Cimg;
     private Image Startimg;
     public bool check = false;
-    private int count, A, B, C, F, score;
+    private int count, A, B, C, L, score;
     private int TotalScore = 0;
     private string eva;
     void Start()
@@ -45,14 +45,14 @@ public class GestureJudgment : MonoBehaviour
         if (data == "0" && check==false)  {
             check = true;
             count = 0;
-            A= 0; B = 0; C = 0; F = 0; score = 0;
+            A= 0; B = 0; C = 0; L = 0; score = 0;
             Startimg.color = Color.green;
         }
         if (check) {
             if (data == "1") A++;
             else if (data == "2") B++;
             else if (data == "3") C++;
-            else F++;
+            else L++;
             count++;
         }
         if (count == 150)
